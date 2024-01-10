@@ -37,7 +37,7 @@ async function createLink() {
         short.value = response.short
         errorMessage.value = ''
     } catch (error) {
-        errorMessage.value = "Failed to generate your link, please try again :("
+        errorMessage.value = "Can't generate your link, make sure URL starts with https://"
     }
 }
 
