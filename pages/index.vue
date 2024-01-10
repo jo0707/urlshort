@@ -23,7 +23,7 @@ async function createLink() {
         if (short.value) return
 
         if (!isValidUrl(link.value)) {
-            errorMessage.value = "Please enter a valid URL"
+            errorMessage.value = "Please enter a valid URL, URL starts with https"
             return
         }
 
