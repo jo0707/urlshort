@@ -12,6 +12,8 @@
 </template>
 
 <script setup lang="ts">
+import { appendHttps } from '~/utils/urlHelper';
+
 const link = ref('')
 const short = ref('')
 const errorMessage = ref('')
@@ -22,8 +24,9 @@ async function createLink() {
         isLoading.value = true
         if (short.value) return
 
+        link.value = appendHttps(link.value)
         if (!isValidUrl(link.value)) {
-            errorMessage.value = "Please enter a valid URL, URL starts with https"
+            errorMessage.value = "Invalid URL, check your link again"
             return
         }
 
