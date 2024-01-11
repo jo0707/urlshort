@@ -12,17 +12,21 @@ export default defineEventHandler(async (event) => {
       statusCode: 400,
       statusMessage: "No URL provided",
     })
-  }
-  if (!isValidUrl(body.url)) {
+  } else if (!isValidUrl(body.url)) {
     throw createError({
       statusCode: 400,
       statusMessage: "Invalid URL",
+    })
+  } else if (body.short && body.short.length > 32) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: "Invalid short length",
     })
   }
 
   let url: IUrl = {
     url: body.url,
-    short: await randomUrl(),
+    short: await randomUrl(body.short),
   }
 
   const urlDocument = await UrlModel.create(url)

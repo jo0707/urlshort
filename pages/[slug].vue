@@ -2,7 +2,7 @@
     <div>
         <p v-if="!error && !isFailed">Opening your links...</p>
         <div v-else>
-            <p>Ouch! We couldn't find your link :/</p>
+            <p>{{ error }} {{ isFailed }} Ouch! We couldn't find your link :/</p>
             <UButton variant="outline" class="mt-2" label="Create One" to="/" block />
         </div>
     </div>
@@ -22,10 +22,12 @@ const { data: url, error } = useFetch<LinkResponse>('/api/link', {
 })
 
 watch(url, (newVal) => {
-    if (newVal?.url && isValidUrl(newVal?.url)) {
-        navigateTo(newVal?.url, { external: true })
-    } else {
-        isFailed.value = true
+    if (newVal?.url) {
+        if (isValidUrl(newVal?.url)) {
+            navigateTo(newVal?.url, { external: true })
+        } else {
+            isFailed.value = true
+        }
     }
 }, { immediate: true })
 </script>

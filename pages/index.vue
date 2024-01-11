@@ -3,45 +3,47 @@
         <div
             class="bg-white p-4 rounded border shadow-lg shadow-gray-700 bg-opacity-10  hover:shadow-xl hover:shadow-gray-700 transition">
             <TheTitle class="mb-10" />
-            <TheForm class="mb-2" v-model:errorMessage="errorMessage" v-model:link="link" @submit.prevent="createLink" />
-            <Transition name="slide-down">
-                <TheResult v-if="short" v-model:short="short" />
-            </Transition>
+            <TheForm class="mb-2" v-model:errorMessage="errorMessage" v-model:link="link" v-model:short="short"
+                @submit="createLink" />
+            <TransitionSlideDown>
+                <TheResult v-if="shortResult" v-model:short="shortResult" @reset="reset" />
+            </TransitionSlideDown>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { appendHttps } from '~/utils/urlHelper';
-
 const link = ref('')
-const short = ref('')
+const short = ref("")
+
+const shortResult = ref('')
 const errorMessage = ref('')
 const isLoading = ref(false)
 
 async function createLink() {
     try {
         isLoading.value = true
-        if (short.value) return
-
-        link.value = appendHttps(link.value)
-        if (!isValidUrl(link.value)) {
-            errorMessage.value = "Invalid URL, check your link again"
-            return
-        }
+        if (shortResult.value) return
 
         const response = await $fetch("/api/generate", {
             method: "POST",
             body: {
-                url: link.value
+                url: link.value,
+                short: short.value
             }
         })
 
-        short.value = response.short
+        shortResult.value = response.short
         errorMessage.value = ''
     } catch (error) {
         errorMessage.value = "Can't generate your link, make sure URL starts with https://"
     }
+}
+
+function reset() {
+    shortResult.value = ''
+    link.value = ''
+    short.value = ''
 }
 
 definePageMeta({

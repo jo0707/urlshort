@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "nuxt-mongoose", "@nuxtjs/seo", "@nuxtjs/google-fonts", "@vueuse/nuxt"],
+  modules: ["@nuxt/ui", "nuxt-mongoose", "@nuxtjs/seo", "@nuxtjs/google-fonts", "@vueuse/nuxt", "nuxt-rate-limit"],
   app: {
     head: {
       templateParams: {
@@ -27,5 +27,13 @@ export default defineNuxtConfig({
     uri: process.env.MONGODB_URI,
     options: {},
     modelsDir: "models",
+  },
+  nuxtRateLimit: {
+    routes: {
+      "/api/generate": {
+        maxRequests: 1,
+        intervalSeconds: 3,
+      },
+    },
   },
 })

@@ -1,12 +1,10 @@
 <template>
-    <div v-show="show" ref="blob"
+    <div ref="blob"
         class="rotate-infinite absolute rounded-full pointer-events-none w-56 h-56 bg-gradient-to-br from-blue-500 to-green-600 opacity-40 blur-[50px]">
     </div>
 </template>
 <script setup lang="ts">
 const blob = ref<HTMLDivElement | null>(null)
-const show = ref(false)
-
 const { x, y } = useMouse()
 
 watchEffect(() => {
@@ -20,15 +18,21 @@ watchEffect(() => {
         })
     }
 })
-
-onMounted(() => {
-    show.value = true
-})
 </script>
 
 <style>
 .rotate-infinite {
     transform-origin: center;
     animation: rotate 3s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
 }
 </style>
