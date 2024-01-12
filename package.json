@@ -1,6 +1,7 @@
 {
   "name": "urlshort",
   "private": false,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
