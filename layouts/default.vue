@@ -10,7 +10,7 @@
         </main>
 
         <footer class="text-center py-2 shadow bg-gray-500 bg-opacity-10">
-            <p class="font-mono text-xs">© {{ (new Date()).getFullYear() }} by
+            <p class="font-mono text-[10px]">© {{ (new Date()).getFullYear() }} by
                 <NuxtLink class="underline" target="_blank" to="https://jooo.my.id">Joshua Sinaga</NuxtLink>
             </p>
         </footer>

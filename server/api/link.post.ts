@@ -1,7 +1,4 @@
-import { GenerateRequest } from "~/types/request/generateRequest"
 import { UrlModel } from "../models/url"
-import { randomUrl } from "../utils/shortGenerator"
-import { GenerateResponse } from "~/types/response/generateResponse"
 import { LinkResponse } from "~/types/response/linkResponse"
 import { LinkRequest } from "~/types/request/linkRequest"
 

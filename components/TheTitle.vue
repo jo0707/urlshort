@@ -7,6 +7,6 @@
                 URLShort</h1>
 
         </div>
-        <p class="text-sm md:text-md text-white text-opacity-80">Convert your long URLs into manageable short links</p>
+        <p class="text-sm md:text-md mt-1 text-white text-opacity-80">Convert your long URLs into manageable short links</p>
     </div>
 </template>

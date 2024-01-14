@@ -9,7 +9,7 @@
         <UDivider />
         <div class="flex flex-col gap-2">
             <UCheckbox v-model="isCustom" class="place-content-center" icon="i-heroicons-arrow-path-solid"
-                label="Custom Path Name" />
+                label="Custom Name" />
             <TransitionSlideDown>
                 <UInput v-if="isCustom" v-model="short" class="w-full" placeholder="Your Link Name (ex: MY_LINK)" />
             </TransitionSlideDown>
