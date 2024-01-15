@@ -1,7 +1,7 @@
 <template>
     <div class="w-full max-w-3xl flex flex-col gap-2">
         <div
-            class="bg-white p-4 rounded border shadow-lg shadow-gray-700 bg-opacity-10  hover:shadow-xl hover:shadow-gray-700 transition">
+            class="bg-white p-4 rounded border-2 border-white border-opacity-50 shadow-lg shadow-gray-700 bg-opacity-10 hover:border-opacity-100 hover:shadow-xl hover:shadow-gray-700 transition">
             <TheTitle class="mb-10" />
             <TheForm class="mb-2" v-model:errorMessage="errorMessage" v-model:link="link" v-model:short="short"
                 @submit="createLink" />

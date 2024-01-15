@@ -1,75 +1,83 @@
-# Nuxt 3 Minimal Starter
+<h1 align="center">URLShort</h1>
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<p align="center">
+  <img src="screenshots/banner.png"/>
+</p>
 
-## Setup
+<p align="center">
+    URLShort is a URL shortener application that is built with Nuxt 3 and MongoDB. 
+</p>
 
-Make sure to install the dependencies:
+## App
+
+Try It : [URLShort](https://s.jooo.my.id/)
+
+<p align="center">
+  <img src="screenshots/main.png" />
+</p>
+
+## Library, Frameworks & Tools Used
+
+- [Nuxt 3](https://nuxt.com/)
+  - [Nuxt UI](https://ui.nuxt.com/)
+  - [Nuxt Google Fonts](https://google-fonts.nuxtjs.org/)
+  - [Nuxt SEO](https://nuxtseo.com/)
+  - [Nuxt Rate Limit](https://github.com/timb-103/nuxt-rate-limit)
+  - [Nuxt VueUse](https://vueuse.org/)
+- [MongoDB](https://www.mongodb.com/)
+  - [MongoDB Atlas (Free Plan)](https://www.mongodb.com/cloud/atlas)
+  - [Nuxt Mongoose](https://nuxt-mongoose.nuxt.space/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Bun](https://bun.sh/)
+
+## Setup & Build
+
+if you want to try, continue or modify this project, you can follow these steps:
+
+- Clone this project
 
 ```bash
-# npm
-npm install
+git clone https://github.com/jo0707/urlshort
+```
 
-# pnpm
-pnpm install
+- Install dependencies (bun)
 
-# yarn
-yarn install
-
-# bun
+```bash
 bun install
 ```
 
-## Development Server
+This project use MongoDB as its link database:
 
-Start the development server on `http://localhost:3000`:
+- Create .env file on the root of the project
+- Create a MongoDB Atlas account
+- Create a new deployment / project (Use M0 to get free plan)
+- On the overview tab, click Connect > Drivers > Nodejs
+- copy your connection string to .env file
 
-```bash
-# npm
-npm run dev
+.env example
 
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+```env
+MONGODB_URI=mongodb+srv://changeyourusername:changeyourpassword@clusterX.xxxxx.mongodb.net/app?retryWrites=true&w=majority
 ```
 
-## Production
-
-Build the application for production:
+- Run the project
 
 ```bash
-# npm
-npm run build
+bun dev
+```
 
-# pnpm
-pnpm run build
+- Build the project
 
-# yarn
-yarn build
-
-# bun
+```bash
 bun run build
+#or
+bun run generate # static hosting
 ```
 
-Locally preview production build:
+That's it!
 
-```bash
-# npm
-npm run preview
+## Contributing
 
-# pnpm
-pnpm run preview
+Made by [jo0707](https://github.com/jo0707)
 
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Feel free to contribute to this repository!
