@@ -40,6 +40,12 @@ if you want to try, continue or modify this project, you can follow these steps:
 git clone https://github.com/jo0707/urlshort
 ```
 
+- Change directory to the project
+
+```bash
+cd urlshort
+```
+
 - Install dependencies (bun)
 
 ```bash
