@@ -1,5 +1,5 @@
 <template>
-    <Transition name="slide-down">
+    <Transition name="slide-down" mode="out-in" appear>
         <slot></slot>
     </Transition>
 </template>

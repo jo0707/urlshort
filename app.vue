@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-screen w-screen bg-gray-900 font-sans overflow-hidden">
+  <div class="relative h-screen w-screen bg-white dark:bg-gray-900 font-sans overflow-hidden transition">
     <TheBlob />
 
     <TransitionFade appear>

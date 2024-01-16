@@ -1,6 +1,6 @@
 <template>
     <div ref="blob"
-        class="rotate-infinite absolute rounded-full pointer-events-none w-56 h-56 bg-gradient-to-br from-blue-500 to-green-600 opacity-40 blur-[50px]">
+        class="rotate-infinite absolute rounded-full pointer-events-none w-56 h-56 bg-gradient-to-br from-primary-400 to-purple-400 dark:from-blue-500 dark:to-green-600 opacity-40 blur-[50px]">
     </div>
 </template>
 <script setup lang="ts">

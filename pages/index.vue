@@ -1,12 +1,13 @@
 <template>
     <div class="w-full max-w-3xl flex flex-col gap-2">
         <div
-            class="bg-white p-4 rounded border-2 border-white border-opacity-50 shadow-lg shadow-gray-700 bg-opacity-10 hover:border-opacity-100 hover:shadow-xl hover:shadow-gray-700 transition">
+            class="bg-gray-300 dark:bg-white bg-opacity-10 dark:bg-opacity-10 p-4 rounded border-2 border-gray-400 dark:border-white shadow-lg dark:shadow-gray-700 hover:shadow-xl dark:hover:shadow-gray-700 transition">
             <TheTitle class="mb-10" />
             <TheForm class="mb-2" v-model:errorMessage="errorMessage" v-model:link="link" v-model:short="short"
                 @submit="createLink" />
             <TransitionSlideDown>
-                <TheResult v-if="shortResult" v-model:short="shortResult" @reset="reset" />
+                <UProgress v-if="isLoading" animation="carousel" />
+                <TheResult v-else-if="shortResult" v-model:short="shortResult" @reset="reset" />
             </TransitionSlideDown>
         </div>
     </div>
@@ -37,6 +38,8 @@ async function createLink() {
         errorMessage.value = ''
     } catch (error) {
         errorMessage.value = "Can't generate your link, make sure URL starts with https://"
+    } finally {
+        isLoading.value = false
     }
 }
 
