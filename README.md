@@ -10,7 +10,7 @@
 
 ## App
 
-Try It : [URLShort](https://s.jooo.my.id/)
+Try It : [URLShort](https://s.jooo.site/)
 
 <p align="center">
   <img src="screenshots/main.png" />
